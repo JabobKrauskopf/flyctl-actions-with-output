@@ -1,0 +1,16 @@
+name: "Test GitHub Action"
+on: push
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test GitHub Action
+        uses: ./
+        id: flyctl_out
+        with:
+          args: "list apps"
+      - name: Echo Output of previouse step
+        run: echo ${{steps.flyctl_out.outputs.stdout}}

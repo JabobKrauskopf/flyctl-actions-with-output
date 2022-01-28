@@ -24,7 +24,7 @@ jobs:
         with:
           args: "postgres create --region fra --vm-size shared-cpu-1x --initial-cluster-size 1 --volume-size 1"
       - name: Echo Output of previouse step
-        run: echo ${{steps.ID.flyctl_out.stdout}}
+        run: echo ${{steps.flyctl_out.outputs.stdout}}
 ```
 
 See the [flyctl documentation](https://fly.io/docs/flyctl/) for more information on `flyctl`
