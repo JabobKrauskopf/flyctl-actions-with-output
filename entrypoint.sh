@@ -7,15 +7,12 @@ if [ -n "$FLY_PROJECT_PATH" ]; then
   # Allow user to change directories in which to run Fly commands
   cd "$FLY_PROJECT_PATH" || exit
 fi
-sh -c "flyctl $*"
 
 exec 5>&1
 STDOUT=$(sh -c "flyctl $*"|tee >(cat - >&5))
 STDOUT="${STDOUT//'%'/'%25'}"
 STDOUT="${STDOUT//$'\n'/'%0A'}"
 STDOUT="${STDOUT//$'\r'/'%0D'}"
-
-echo test
 
 echo ::set-output name=stdout::$STDOUT
 
