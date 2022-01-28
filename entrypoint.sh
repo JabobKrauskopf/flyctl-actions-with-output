@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-# Most of this file has been copied from https://github.com/superfly/flyctl-actions/blob/master/LICENSE
+# Most of this file has been copied from https://github.com/superfly/flyctl-actions
 
 if [ -n "$FLY_PROJECT_PATH" ]; then
   PREV_PATH=$(pwd)
