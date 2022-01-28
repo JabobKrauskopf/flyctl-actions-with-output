@@ -11,6 +11,9 @@ sh -c "flyctl $*"
 
 exec 5>&1
 STDOUT=$(sh -c "flyctl $*"|tee >(cat - >&5))
+STDOUT="${STDOUT//'%'/'%25'}"
+STDOUT="${STDOUT//$'\n'/'%0A'}"
+STDOUT="${STDOUT//$'\r'/'%0D'}"
 
 echo ::set-output name=stdout::$STDOUT
 
