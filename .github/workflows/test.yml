@@ -14,4 +14,4 @@ jobs:
         with:
           args: "list apps"
       - name: Echo Output of previouse step
-        run: echo ${{steps.flyctl_out.outputs.stdout}}
+        run: echo "${{steps.flyctl_out.outputs.stdout}}"
