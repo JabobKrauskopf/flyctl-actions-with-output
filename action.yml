@@ -5,7 +5,8 @@ branding:
   icon: "archive"
   color: "blue"
 outputs:
-  stdout
+  stdout:
+    description: 'stdout of the flyctl command'
 runs:
   using: "docker"
   image: "Dockerfile"
