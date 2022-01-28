@@ -15,7 +15,9 @@ STDOUT="${STDOUT//'%'/'%25'}"
 STDOUT="${STDOUT//$'\n'/'%0A'}"
 STDOUT="${STDOUT//$'\r'/'%0D'}"
 
-echo ::set-output name=stdout::$STDOUT > /dev/null
+echo test
+
+echo ::set-output name=stdout::$STDOUT
 
 ACTUAL_EXIT="$?"
 
