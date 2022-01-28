@@ -1,0 +1,8 @@
+name: "GitHub Action Wrapper for flyctl"
+description: "Wraps the flyctl Command Line Tool"
+author: JabobKrauskopf
+outputs:
+  stdout
+runs:
+  using: "docker"
+  image: "Dockerfile"
