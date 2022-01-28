@@ -12,7 +12,7 @@ sh -c "flyctl $*"
 exec 5>&1
 STDOUT=$(sh -c "flyctl $*"|tee >(cat - >&5))
 
-echo ::set-output name=stdout::$STDOUT
+echo "$(::set-output name=stdout::$STDOUT)"
 
 ACTUAL_EXIT="$?"
 
